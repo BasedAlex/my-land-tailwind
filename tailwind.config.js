@@ -3,6 +3,17 @@ module.exports = {
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
+			gridTemplateColumns: {
+				renting: '15% 85%',
+				rentingrev: '85% 15%',
+				rentingrevtop: '90% 10%',
+			},
+			minHeight: {
+				auto: 'auto',
+			},
+			animation: {
+				slidedown: 'slide-down 0.2s ease-out forwards',
+			},
 			colors: {
 				'bookmark-purple': '#253761',
 				'bookmark-red': '#FA5959',
@@ -14,6 +25,10 @@ module.exports = {
 			},
 			backgroundImage: {
 				'header-pattern': "url('/src/assets/images/header_background.svg')",
+				modalViewButtonG:
+					"url('/src/assets/images/coolicon-grey.svg'), url('/src/assets/images/Ellipse.svg')",
+				modalViewButtonB:
+					"url('/src/assets/images/coolicon-blue.svg'), url('/src/assets/images/Ellipse_white.svg')",
 			},
 		},
 		fontFamily: {

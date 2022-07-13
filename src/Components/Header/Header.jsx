@@ -6,7 +6,7 @@ function Header() {
 	return (
 		<div className='bg-gradient-to-r from-blue-700 to-blue-500 '>
 			<header className='bg-header-pattern w-full bg-no-repeat bg-cover bg-center h-auto '>
-				<nav className='flex flex-auto justify-between align-center items-center py-0	px-20 font-serif'>
+				<nav className='flex flex-auto justify-between align-center items-center py-0	px-20 font-sans-serif'>
 					<img className='mt-4' src={logo} alt='' />
 					<div className='mt-4 flex gap-4 '>
 						<a href='$' className='text-white text-lg	hover:underline'>

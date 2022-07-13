@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card/Card'
 
 function About() {
 	return (
@@ -28,25 +29,7 @@ function About() {
 					</p>
 				</div>
 				<div className='grid auto-rows-fr grid-cols-3 gap-4 items-center justify-center'>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						<b>Богатый опыт</b> успешной работы на российском рынке
-					</div>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						<b>Более 1000</b> партнеров – официальных дилерских центров
-					</div>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						Сотрудничество <br /> с <b>ключевыми банками</b> и
-						<b> страховыми компаниями</b>
-					</div>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						Представлены в <b>каждом регионе России</b>
-					</div>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						<b>Проверенные</b> и <b>надёжные</b> партнеры
-					</div>
-					<div className='font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full'>
-						<b>Гарантии</b> и <b>высокое качество</b> оказываемых услуг
-					</div>
+					<Card />
 				</div>
 			</div>
 		</section>
