@@ -4,6 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
+@layer components {
+    .btn {
+        @apply rounded-md	font-medium	text-sm	border-none	transition-all text-white bg-bookmark-blue px-5 py-3 hover:bg-bookmark-hover-blue active:bg-bookmark-hover-blue focus:bg-bookmark-focus-blue;
+    }
+    .btn-white {
+        @apply rounded-md	font-medium	text-sm	border-none	transition-all text-bookmark-purple bg-bookmark-white px-5 py-3 hover:bg-bookmark-blue hover:text-bookmark-white active:bg-bookmark-blue active:text-bookmark-white focus:bg-bookmark-purple focus:text-bookmark-white;
+    }
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',

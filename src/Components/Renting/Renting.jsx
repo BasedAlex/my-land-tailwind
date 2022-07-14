@@ -1,9 +1,7 @@
 import React from 'react'
 import useModal from '../../hooks/use-modal'
 import Modal from '../../UI/Modal/Modal'
-import ModalBtn from '../../UI/ModalBtn/ModalBtn'
 import icon from '../../assets/images/coolicon-close.svg'
-import { contentCards } from './RentingCards/RentingCards'
 
 /* eslint-disable react/prop-types */
 
@@ -54,7 +52,7 @@ function Renting() {
                     </ul>
                 </article>
                 <footer className="mb-6">
-                    <ModalBtn />
+                    <button className="btn">Подать заявку</button>
                     <p className="ml-2 text-xs">Решение до 20 минут</p>
                 </footer>
             </div>
@@ -106,7 +104,7 @@ function Renting() {
                     </ul>
                 </article>
                 <footer className="mb-6">
-                    <ModalBtn />
+                    <button className="btn">Подать заявку</button>
                     <p className="ml-2 text-xs">Решение до 20 минут</p>
                 </footer>
             </div>
@@ -164,7 +162,7 @@ function Renting() {
                     </p>
                 </article>
                 <footer className="mb-6">
-                    <ModalBtn />
+                    <button className="btn">Подать заявку</button>
                     <p className="ml-2 text-xs">Решение до 20 минут</p>
                 </footer>
             </div>
@@ -206,7 +204,7 @@ function Renting() {
                     </ul>
                 </article>
                 <footer className="mb-6">
-                    <ModalBtn />
+                    <button className="btn">Подать заявку</button>
                     <p className="ml-2 text-xs">Решение до 20 минут</p>
                 </footer>
             </div>
@@ -274,7 +272,7 @@ function Renting() {
                     </p>
                 </article>
                 <footer className="mb-6">
-                    <ModalBtn />
+                    <button className="btn">Подать заявку</button>
                     <p className="ml-2 text-xs">Решение до 20 минут</p>
                 </footer>
             </div>
@@ -303,9 +301,7 @@ function Renting() {
                             <br />
                             <b>до 84 месяцев</b>
                         </p>
-                        <button className="rounded-md	font-medium	text-sm	border-none	transition-all text-white bg-bookmark-blue px-5 py-3 hover:bg-bookmark-hover-blue active:bg-bookmark-hover-blue focus:bg-bookmark-focus-blue">
-                            Подать заявку
-                        </button>
+                        <button className="btn">Подать заявку</button>
                         <p className="text-xs self-center text-slate-500">
                             Решение до 20 минут
                         </p>

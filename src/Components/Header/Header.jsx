@@ -50,10 +50,10 @@ function Header() {
                             </p>
 
                             <div className="flex list-none gap-6 pl-0">
-                                <button className="rounded-md	font-medium	text-sm	border-none	transition-all text-white bg-bookmark-blue px-5 py-3 hover:bg-bookmark-hover-blue active:bg-bookmark-hover-blue focus:bg-bookmark-focus-blue">
+                                <button className="btn">
                                     Автокредитование
                                 </button>
-                                <button className="rounded-md	font-medium	text-sm	border-none	transition-all text-bookmark-purple bg-bookmark-white px-5 py-3 hover:bg-bookmark-blue hover:text-bookmark-white active:bg-bookmark-blue active:text-bookmark-white focus:bg-bookmark-purple focus:text-bookmark-white">
+                                <button className="btn-white">
                                     Подбор автомобиля
                                 </button>
                             </div>
