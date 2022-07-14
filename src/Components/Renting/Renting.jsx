@@ -3,6 +3,7 @@ import useModal from '../../hooks/use-modal'
 import Modal from '../../UI/Modal/Modal'
 import ModalBtn from '../../UI/ModalBtn/ModalBtn'
 import icon from '../../assets/images/coolicon-close.svg'
+import { contentCards } from './RentingCards/RentingCards'
 
 /* eslint-disable react/prop-types */
 
@@ -382,6 +383,7 @@ function Renting() {
                                         Авторассрочка на новые автомобили и на
                                         автомобили с пробегом
                                     </h4>
+
                                     <input
                                         type="submit"
                                         value=""

@@ -51,7 +51,7 @@ const Card = () =>
         return (
             <div
                 key={idX}
-                className="font-normal text-sm text-start self-start	border border-solid	border-gray-300 rounded-md	p-2.5	min-h-full"
+                className="font-normal text-sm text-start self-start border border-solid border-gray-300 rounded-md	p-2.5 min-h-full"
             >
                 {item.text}
             </div>

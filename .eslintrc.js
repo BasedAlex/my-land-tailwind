@@ -9,13 +9,19 @@ module.exports = {
         'standard',
         'eslint-config-prettier',
     ],
+    parser: '@babel/eslint-parser',
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
+        requireConfigFile: false,
+        babelOptions: {
+            presets: ['@babel/preset-react'],
+        },
     },
+
     plugins: ['react', 'eslint-plugin-prettier'],
     rules: {
         'prettier/prettier': 'error',
