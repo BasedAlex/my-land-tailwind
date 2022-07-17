@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useModal from '../../hooks/use-modal'
 import Modal from '../../UI/Modal/Modal'
 import icon from '../../assets/images/coolicon-close.svg'
@@ -6,14 +6,20 @@ import icon from '../../assets/images/coolicon-close.svg'
 /* eslint-disable react/prop-types */
 
 function Renting() {
-    const [modalNewAuto, modalNewAutoHandler] = useModal()
-    const [modalUsedAuto, modalUsedAutoHandler] = useModal()
+    // const [modalNewAuto, modalNewAutoHandler] = useModal()
+    // const [modalUsedAuto, modalUsedAutoHandler] = useModal()
     const [modalLoanPayment, modalLoanPaymentHandler] = useModal()
-    const [modalInstallment, modalInstallmentHandler] = useModal()
-    const [modalGOS, modalGOSHandler] = useModal()
+    // const [modalInstallment, modalInstallmentHandler] = useModal()
+    // const [modalGOS, modalGOSHandler] = useModal()
 
-    const modalContentNewAuto = modalNewAuto && (
-        <Modal onClick={modalNewAutoHandler}>
+    const [modalActive, setModalActive] = useState(false)
+
+    const toggleModal = () => {
+        setModalActive(!modalActive)
+    }
+
+    const modalContentNewAuto = toggleModal && (
+        <Modal active={modalActive} setActive={setModalActive}>
             <div className="pt-8 pr-8 pb-0 pl-9">
                 <header>
                     <div className="flex justify-between items-center">
@@ -28,7 +34,7 @@ function Renting() {
                         </div>
                         <span
                             className="self-start"
-                            onClick={modalNewAutoHandler}
+                            // onClick={modalNewAutoHandler}
                         >
                             <img src={icon} alt="closing btn" />
                         </span>
@@ -59,8 +65,8 @@ function Renting() {
         </Modal>
     )
 
-    const modalContentUsedAuto = modalUsedAuto && (
-        <Modal onClick={modalUsedAutoHandler}>
+    const modalContentUsedAuto = toggleModal && (
+        <Modal active={modalActive} setActive={setModalActive}>
             <div className="pt-8 pr-8 pb-0 pl-9">
                 <header>
                     <div className="flex justify-between items-center">
@@ -71,7 +77,7 @@ function Renting() {
                         </div>
                         <span
                             className="self-start"
-                            onClick={modalUsedAutoHandler}
+                            // onClick={modalUsedAutoHandler}
                         >
                             <img src={icon} alt="closing btn" />
                         </span>
@@ -112,7 +118,11 @@ function Renting() {
     )
 
     const modalContentLoanPayment = modalLoanPayment && (
-        <Modal onClick={modalLoanPaymentHandler}>
+        <Modal
+            active={modalActive}
+            setActive={setModalActive}
+            onClick={modalLoanPaymentHandler}
+        >
             <div className="pt-8 pr-8 pb-0 pl-9">
                 <header>
                     <div className="flex justify-between items-center">
@@ -169,115 +179,115 @@ function Renting() {
         </Modal>
     )
 
-    const modalContentInstallment = modalInstallment && (
-        <Modal onClick={modalInstallmentHandler}>
-            <div className="pt-8 pr-8 pb-0 pl-9">
-                <header>
-                    <div className="flex justify-between items-center">
-                        <div>
-                            <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
-                                Условия:
-                            </h2>
-                        </div>
-                        <span
-                            className="self-start"
-                            onClick={modalInstallmentHandler}
-                        >
-                            <img src={icon} alt="closing btn" />
-                        </span>
-                    </div>
-                </header>
-                <article>
-                    <ul className="not-italic font-normal text-sm	list-none	pl-0 mb-6 mt-0">
-                        <li>&#8211; 0% за пользование рассрочкой;</li>
-                        <li>&#8211; первоначальный взнос от 0%;</li>
-                        <li>
-                            &#8211; рассрочка на 12 и 18 месяцев на новые
-                            автомобили марок Exeed, Geely;
-                        </li>
-                        <li>
-                            &#8211; рассрочка на 12 и 18 месяца на новые
-                            автомобили марок Hyundai, Genesis, Chery, Suzuki,
-                            Lada;
-                        </li>
-                        <li>&#8211; срок рассмотрения заявки меньше 1 часа</li>
-                    </ul>
-                </article>
-                <footer className="mb-6">
-                    <button className="btn">Подать заявку</button>
-                    <p className="ml-2 text-xs">Решение до 20 минут</p>
-                </footer>
-            </div>
-        </Modal>
-    )
+    // const modalContentInstallment = toggleModal && (
+    //     <Modal onClick={modalInstallmentHandler}>
+    //         <div className="pt-8 pr-8 pb-0 pl-9">
+    //             <header>
+    //                 <div className="flex justify-between items-center">
+    //                     <div>
+    //                         <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
+    //                             Условия:
+    //                         </h2>
+    //                     </div>
+    //                     <span
+    //                         className="self-start"
+    //                         onClick={modalInstallmentHandler}
+    //                     >
+    //                         <img src={icon} alt="closing btn" />
+    //                     </span>
+    //                 </div>
+    //             </header>
+    //             <article>
+    //                 <ul className="not-italic font-normal text-sm	list-none	pl-0 mb-6 mt-0">
+    //                     <li>&#8211; 0% за пользование рассрочкой;</li>
+    //                     <li>&#8211; первоначальный взнос от 0%;</li>
+    //                     <li>
+    //                         &#8211; рассрочка на 12 и 18 месяцев на новые
+    //                         автомобили марок Exeed, Geely;
+    //                     </li>
+    //                     <li>
+    //                         &#8211; рассрочка на 12 и 18 месяца на новые
+    //                         автомобили марок Hyundai, Genesis, Chery, Suzuki,
+    //                         Lada;
+    //                     </li>
+    //                     <li>&#8211; срок рассмотрения заявки меньше 1 часа</li>
+    //                 </ul>
+    //             </article>
+    //             <footer className="mb-6">
+    //                 <button className="btn">Подать заявку</button>
+    //                 <p className="ml-2 text-xs">Решение до 20 минут</p>
+    //             </footer>
+    //         </div>
+    //     </Modal>
+    // )
 
-    const modalContentGOS = modalGOS && (
-        <Modal onClick={modalGOSHandler}>
-            <div className="pt-8 pr-8 pb-0 pl-9">
-                <header>
-                    <div className="flex justify-between items-center">
-                        <div>
-                            <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
-                                Программа «Гарантия Отличной Ставки»
-                            </h2>
-                            <p className="not-italic font-normal text-sm m-0 mb-6">
-                                предполагает осуществление Банком при полном
-                                погашении кредита пересчета <br />
-                                процентов, оплаченных за весь срок действия
-                                Договора потребительского кредита, <br />
-                                по сниженной ставке, при условии что:
-                            </p>
-                        </div>
-                        <span className="self-start" onClick={modalGOSHandler}>
-                            <img src={icon} alt="closing btn" />
-                        </span>
-                    </div>
-                </header>
-                <article>
-                    <ul className="not-italic font-normal text-sm	list-none	pl-0 mb-6 mt-0">
-                        <li>
-                            &#8211; за весь период пользования кредитом
-                            отсутствовала просроченная задолженность;
-                        </li>
-                        <li>
-                            &#8211; частичное/полное досрочное погашение
-                            произведено не ранее, чем через 2 (два) года <br />с
-                            даты начала действия Договора потребительского
-                            кредита;
-                        </li>
-                        <li>
-                            &#8211; в течение всего срока кредитного договора в
-                            каждом отчётном периоде было сделано <br />
-                            от 5 любых покупок (их общая сумма должна составлять
-                            от 10 000 руб.)
-                        </li>
-                        <li>
-                            &#8211; заемщик в течение всего срока действия
-                            кредита оплачивал платежи согласно <br />
-                            первоначальным условиям, установленным в Договоре
-                            потребительского кредита <br />
-                            на момент заключения (за исключением изменений,
-                            вызванных досрочным погашением, <br />с соблюдением
-                            предусмотренных услугой требований).
-                        </li>
-                    </ul>
-                </article>
-                <article>
-                    <p>
-                        Разница в оплаченных процентах и процентах, рассчитанных
-                        по сниженной процентной ставке, возвращается Заемщику на
-                        его Банковский счет. <br />
-                        Является первой услугой в автокредитовании,
-                        подразумевающей наличие кэшбэка заемщику!
-                    </p>
-                </article>
-                <footer className="mb-6">
-                    <button className="btn">Подать заявку</button>
-                    <p className="ml-2 text-xs">Решение до 20 минут</p>
-                </footer>
-            </div>
-        </Modal>
-    )
+    // const modalContentGOS = toggleModal && (
+    //     <Modal onClick={modalGOSHandler}>
+    //         <div className="pt-8 pr-8 pb-0 pl-9">
+    //             <header>
+    //                 <div className="flex justify-between items-center">
+    //                     <div>
+    //                         <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
+    //                             Программа «Гарантия Отличной Ставки»
+    //                         </h2>
+    //                         <p className="not-italic font-normal text-sm m-0 mb-6">
+    //                             предполагает осуществление Банком при полном
+    //                             погашении кредита пересчета <br />
+    //                             процентов, оплаченных за весь срок действия
+    //                             Договора потребительского кредита, <br />
+    //                             по сниженной ставке, при условии что:
+    //                         </p>
+    //                     </div>
+    //                     <span className="self-start" onClick={modalGOSHandler}>
+    //                         <img src={icon} alt="closing btn" />
+    //                     </span>
+    //                 </div>
+    //             </header>
+    //             <article>
+    //                 <ul className="not-italic font-normal text-sm	list-none	pl-0 mb-6 mt-0">
+    //                     <li>
+    //                         &#8211; за весь период пользования кредитом
+    //                         отсутствовала просроченная задолженность;
+    //                     </li>
+    //                     <li>
+    //                         &#8211; частичное/полное досрочное погашение
+    //                         произведено не ранее, чем через 2 (два) года <br />с
+    //                         даты начала действия Договора потребительского
+    //                         кредита;
+    //                     </li>
+    //                     <li>
+    //                         &#8211; в течение всего срока кредитного договора в
+    //                         каждом отчётном периоде было сделано <br />
+    //                         от 5 любых покупок (их общая сумма должна составлять
+    //                         от 10 000 руб.)
+    //                     </li>
+    //                     <li>
+    //                         &#8211; заемщик в течение всего срока действия
+    //                         кредита оплачивал платежи согласно <br />
+    //                         первоначальным условиям, установленным в Договоре
+    //                         потребительского кредита <br />
+    //                         на момент заключения (за исключением изменений,
+    //                         вызванных досрочным погашением, <br />с соблюдением
+    //                         предусмотренных услугой требований).
+    //                     </li>
+    //                 </ul>
+    //             </article>
+    //             <article>
+    //                 <p>
+    //                     Разница в оплаченных процентах и процентах, рассчитанных
+    //                     по сниженной процентной ставке, возвращается Заемщику на
+    //                     его Банковский счет. <br />
+    //                     Является первой услугой в автокредитовании,
+    //                     подразумевающей наличие кэшбэка заемщику!
+    //                 </p>
+    //             </article>
+    //             <footer className="mb-6">
+    //                 <button className="btn">Подать заявку</button>
+    //                 <p className="ml-2 text-xs">Решение до 20 минут</p>
+    //             </footer>
+    //         </div>
+    //     </Modal>
+    // )
 
     return (
         <>
@@ -317,7 +327,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={modalNewAutoHandler}
+                                        onClick={toggleModal}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -340,7 +350,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={modalUsedAutoHandler}
+                                        onClick={toggleModal}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -384,13 +394,13 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat bg-center	border-none	pt-6 "
-                                        onClick={modalInstallmentHandler}
+                                        onClick={toggleModal}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
                                     Возмещение каждого 12-го платежа по кредиту
                                 </p>
-                                {modalContentInstallment}
+                                {/* {modalContentInstallment} */}
                             </div>
                             <div className="bg-white shadow-md	shadow-neutral-500">
                                 <div className="grid grid-cols-rentingrev">
@@ -401,7 +411,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6  "
-                                        onClick={modalGOSHandler}
+                                        onClick={toggleModal}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -409,7 +419,7 @@ function Renting() {
                                     потребительского кредита на покупку
                                     транспортного средства.
                                 </p>
-                                {modalContentGOS}
+                                {/* {modalContentGOS} */}
                             </div>
                         </div>
                     </div>

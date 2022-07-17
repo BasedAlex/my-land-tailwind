@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
 const useModal = () => {
-    const [modal, setModal] = useState(false)
+    const [modalActive, setModalActive] = useState(false)
 
     const modalHandler = () => {
-        setModal(!modal)
+        setModalActive(!modalActive)
     }
 
-    return [modal, modalHandler]
+    return [modalActive, modalHandler]
 }
 
 export default useModal
