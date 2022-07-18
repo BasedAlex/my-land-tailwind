@@ -13,10 +13,10 @@ function Renting() {
     const [modalInstallment, modalInstallmentHandler] = useModal()
     const [modalGOS, modalGOSHandler] = useModal()
 
-    const [modalContent, setModalContent] = useModal([])
+    const [modalContent, setModalContent] = useModal()
 
-    const alpha = (
-        <Modal onClick="">
+    const alpha = modalContent && (
+        <Modal onClick={setModalContent}>
             <div className="pt-8 pr-8 pb-0 pl-9">
                 {modalData.map((modal) => {
                     return (
@@ -27,7 +27,10 @@ function Renting() {
                                         {modal.mainTitle}
                                         {modal.subTitle}
                                     </div>
-                                    <span className="self-start" onClick="">
+                                    <span
+                                        className="self-start"
+                                        onClick={setModalContent}
+                                    >
                                         <img src={icon} alt="closing btn" />
                                     </span>
                                 </div>
@@ -356,7 +359,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick=""
+                                        onClick={setModalContent}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -367,7 +370,7 @@ function Renting() {
                                     страхования автомобиля от рисков хищения
                                     (угона), утраты (гибели).
                                 </p>
-                                {''}
+                                {alpha}
                             </div>
 
                             <div className="bg-white shadow-md shadow-neutral-500">
@@ -379,7 +382,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={modalUsedAutoHandler}
+                                        onClick={() => modalUsedAutoHandler}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -390,7 +393,7 @@ function Renting() {
                                     Специальные ставки на покупку автомобилей не
                                     старше 5 и 10 лет.
                                 </p>
-                                {modalContentUsedAuto}
+                                {''}
                             </div>
                         </div>
 
