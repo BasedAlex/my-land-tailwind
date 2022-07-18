@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useModal from '../../hooks/use-modal'
 import Modal from '../../UI/Modal/Modal'
 import icon from '../../assets/images/coolicon-close.svg'
+import { modalData } from './RentingData'
 
 /* eslint-disable react/prop-types */
 
@@ -11,6 +12,44 @@ function Renting() {
     const [modalLoanPayment, modalLoanPaymentHandler] = useModal()
     const [modalInstallment, modalInstallmentHandler] = useModal()
     const [modalGOS, modalGOSHandler] = useModal()
+
+    const [modalContent, setModalContent] = useModal([])
+
+    const alpha = (
+        <Modal onClick="">
+            <div className="pt-8 pr-8 pb-0 pl-9">
+                {modalData.map((modal) => {
+                    return (
+                        <>
+                            <header>
+                                <div className="flex justify-between items-center">
+                                    <div>
+                                        {modal.mainTitle}
+                                        {modal.subTitle}
+                                    </div>
+                                    <span className="self-start" onClick="">
+                                        <img src={icon} alt="closing btn" />
+                                    </span>
+                                </div>
+                            </header>
+                            {modal.termsExtraCons}
+                            <article>
+                                {modal.terms}
+                                {modal.termsCons}
+                            </article>
+                            {modal.extraAgreements}
+                            <footer className="mb-6">
+                                <button className="btn">Подать заявку</button>
+                                <p className="ml-2 text-xs">
+                                    Решение до 20 минут
+                                </p>
+                            </footer>
+                        </>
+                    )
+                })}
+            </div>
+        </Modal>
+    )
 
     const modalContentNewAuto = modalNewAuto && (
         <Modal onClick={modalNewAutoHandler}>
@@ -317,7 +356,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={modalNewAutoHandler}
+                                        onClick=""
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -328,7 +367,7 @@ function Renting() {
                                     страхования автомобиля от рисков хищения
                                     (угона), утраты (гибели).
                                 </p>
-                                {modalContentNewAuto}
+                                {''}
                             </div>
 
                             <div className="bg-white shadow-md shadow-neutral-500">
