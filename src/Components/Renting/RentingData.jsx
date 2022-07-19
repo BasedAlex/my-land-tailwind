@@ -2,6 +2,7 @@ import React from 'react'
 
 export const modalData = [
     {
+        key: 1,
         mainTitle: (
             <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
                 Авторассрочка на новые автомобили и автомобили с пробегом
@@ -36,6 +37,7 @@ export const modalData = [
         extraAgreements: '',
     },
     {
+        key: 2,
         mainTitle: (
             <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
                 Условия кредитования
@@ -75,6 +77,7 @@ export const modalData = [
         extraAgreements: '',
     },
     {
+        key: 3,
         mainTitle: '',
         subTitle: '',
         terms: (
@@ -117,6 +120,7 @@ export const modalData = [
         ),
     },
     {
+        key: 4,
         mainTitle: (
             <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
                 Условия:
@@ -143,6 +147,7 @@ export const modalData = [
         extraAgreements: '',
     },
     {
+        key: 5,
         mainTitle: (
             <h2 className="font-semibold text-base not-italic mb-1 my-0 text-black">
                 Программа «Гарантия Отличной Ставки»

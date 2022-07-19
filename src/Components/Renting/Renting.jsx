@@ -13,14 +13,17 @@ function Renting() {
     const [modalInstallment, modalInstallmentHandler] = useModal()
     const [modalGOS, modalGOSHandler] = useModal()
 
-    const [modalContent, setModalContent] = useModal()
+    const [modalContent, setModalContent] = useModal([])
+    const changeContent = (modal) => {
+        setModalContent([modal])
+    }
 
     const alpha = modalContent && (
         <Modal onClick={setModalContent}>
             <div className="pt-8 pr-8 pb-0 pl-9">
                 {modalData.map((modal) => {
                     return (
-                        <>
+                        <div key={modal.key}>
                             <header>
                                 <div className="flex justify-between items-center">
                                     <div>
@@ -29,7 +32,7 @@ function Renting() {
                                     </div>
                                     <span
                                         className="self-start"
-                                        onClick={setModalContent}
+                                        onClick={() => changeContent(modal)}
                                     >
                                         <img src={icon} alt="closing btn" />
                                     </span>
@@ -47,7 +50,7 @@ function Renting() {
                                     Решение до 20 минут
                                 </p>
                             </footer>
-                        </>
+                        </div>
                     )
                 })}
             </div>
@@ -382,7 +385,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={() => modalUsedAutoHandler}
+                                        onClick={setModalContent}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -393,7 +396,7 @@ function Renting() {
                                     Специальные ставки на покупку автомобилей не
                                     старше 5 и 10 лет.
                                 </p>
-                                {''}
+                                {alpha}
                             </div>
                         </div>
 
@@ -407,13 +410,13 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6"
-                                        onClick={modalLoanPaymentHandler}
+                                        onClick={setModalContent}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 font-sans	my-3.5">
                                     Возмещение каждого 12-го платежа по кредиту
                                 </p>
-                                {modalContentLoanPayment}
+                                {alpha}
                             </div>
                             <div className="bg-white shadow-md	 shadow-neutral-500">
                                 <div className="grid grid-cols-rentingrev">
@@ -426,13 +429,13 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat bg-center	border-none	pt-6 "
-                                        onClick={modalInstallmentHandler}
+                                        onClick={setModalContent}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
                                     Возмещение каждого 12-го платежа по кредиту
                                 </p>
-                                {modalContentInstallment}
+                                {alpha}
                             </div>
                             <div className="bg-white shadow-md	shadow-neutral-500">
                                 <div className="grid grid-cols-rentingrev">
@@ -443,7 +446,7 @@ function Renting() {
                                         type="submit"
                                         value=""
                                         className="bg-modalViewButtonG hover:bg-modalViewButtonB active:bg-modalViewButtonB bg-no-repeat	bg-center	border-none	pt-6  "
-                                        onClick={modalGOSHandler}
+                                        onClick={setModalContent}
                                     />
                                 </div>
                                 <p className="font-sm pl-6 pr-5 my-3.5">
@@ -451,7 +454,7 @@ function Renting() {
                                     потребительского кредита на покупку
                                     транспортного средства.
                                 </p>
-                                {modalContentGOS}
+                                {alpha}
                             </div>
                         </div>
                     </div>
