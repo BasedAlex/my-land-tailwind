@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from '../../UI/Modal/Modal'
+import icon from '../../assets/images/coolicon-close.svg'
 
-export const modalData = [
+const data = [
     {
         key: 1,
         mainTitle: (
@@ -205,3 +207,75 @@ export const modalData = [
         ),
     },
 ]
+
+export default function modalWindow() {
+    const [activeBodyModal, setActiveBodyModal] = useState([])
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const showModal = (item) => {
+        setActiveBodyModal([item])
+        setIsModalVisible(true)
+    }
+    return (
+        <>
+            <footer className="grid grid-cols-5 gap-2.5 bg-neutral-900	p-16">
+                <div
+                    size="small"
+                    style={{
+                        marginTop: 20,
+                    }}
+                >
+                    {data.map((item) => {
+                        return (
+                            <button
+                                key={item.key}
+                                type="primary"
+                                onClick={() => showModal(item)}
+                            >
+                                Open Modal {item.key}
+                            </button>
+                        )
+                    })}
+                </div>
+            </footer>
+
+            <Modal visible={isModalVisible}>
+                <div className="pt-8 pr-8 pb-0 pl-9">
+                    {activeBodyModal.map((modal) => {
+                        return (
+                            <div key={modal.key}>
+                                <header>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            {modal.mainTitle}
+                                            {modal.subTitle}
+                                        </div>
+                                        <span
+                                            className="self-start"
+                                            onClick={''}
+                                        >
+                                            <img src={icon} alt="closing btn" />
+                                        </span>
+                                    </div>
+                                </header>
+                                {modal.termsExtraCons}
+                                <article>
+                                    {modal.terms}
+                                    {modal.termsCons}
+                                </article>
+                                {modal.extraAgreements}
+                                <footer className="mb-6">
+                                    <button className="btn">
+                                        Подать заявку
+                                    </button>
+                                    <p className="ml-2 text-xs">
+                                        Решение до 20 минут
+                                    </p>
+                                </footer>
+                            </div>
+                        )
+                    })}
+                </div>
+            </Modal>
+        </>
+    )
+}

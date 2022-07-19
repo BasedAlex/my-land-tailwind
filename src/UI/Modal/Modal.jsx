@@ -22,7 +22,7 @@ const ModalOverlay = (props) => {
 
 const overlay = document.getElementById('overlays')
 
-const Modal = (props) => {
+const Modale = (props) => {
     return (
         <>
             {ReactDOM.createPortal(
@@ -39,4 +39,4 @@ const Modal = (props) => {
     )
 }
 
-export default Modal
+export default Modale
