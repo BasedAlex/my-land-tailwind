@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import '../../App.css'
+import Modal from './Modals/Modal'
 import icon from '../../assets/images/coolicon-close.svg'
-import { Modal } from 'antd'
-import 'antd/dist/antd.css'
 
 const data = [
     {
@@ -267,23 +265,14 @@ const data = [
     },
 ]
 
-export default function Rent() {
+function Rent() {
     const [activeBodyModal, setActiveBodyModal] = useState([])
-    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [modalActive, setModalActive] = useState(false)
     const showModal = (item) => {
         setActiveBodyModal([item])
-        setIsModalVisible(true)
+        setModalActive(true)
     }
 
-    const handleOk = () => {
-        setActiveBodyModal([])
-        setIsModalVisible(false)
-    }
-
-    const handleCancel = () => {
-        setActiveBodyModal([])
-        setIsModalVisible(false)
-    }
     return (
         <section>
             <div className="grid grid-cols-renting bg-bookmark-white py-14 px-20 ">
@@ -337,21 +326,7 @@ export default function Rent() {
                             })}
                         </div>
                     </div>
-                    <Modal
-                        visible={isModalVisible}
-                        onOk={handleOk}
-                        onCancel={handleCancel}
-                        cancelButtonProps={{ style: { display: 'none' } }}
-                        okButtonProps={{ style: { display: 'none' } }}
-                        closeIcon={
-                            <div>
-                                <span className="pt-2">
-                                    <img src={icon} alt="closing btn" />
-                                </span>
-                            </div>
-                        }
-                        style={{ margin: 'auto auto' }}
-                    >
+                    <Modal active={modalActive} setActive={setModalActive}>
                         <div className="pt-8 pr-8 pb-0 pl-9">
                             {activeBodyModal.map((modal) => {
                                 return (
@@ -362,6 +337,17 @@ export default function Rent() {
                                                     {modal.mainTitle}
                                                     {modal.subTitle}
                                                 </div>
+                                                <span className="self-start">
+                                                    <img
+                                                        src={icon}
+                                                        onClick={() =>
+                                                            setModalActive(
+                                                                false
+                                                            )
+                                                        }
+                                                        alt="closing btn"
+                                                    />
+                                                </span>
                                             </div>
                                         </header>
                                         {modal.termsExtraCons}
@@ -388,3 +374,5 @@ export default function Rent() {
         </section>
     )
 }
+
+export default Rent
