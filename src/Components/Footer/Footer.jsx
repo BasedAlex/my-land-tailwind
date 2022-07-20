@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
-import Modal from '../Renting/Modals/Modal'
+import Modal from '../UI/Modals/Modal'
 import logo from '../../assets/images/logoFooter.svg'
 
 function Footer() {
