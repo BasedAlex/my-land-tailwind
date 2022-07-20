@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
-import Modal from '../Renting/Modals/Modal'
+import Modal from '../UI/Modals/Modal'
 import logo from '../../assets/images/logoFooter.svg'
 
 function Footer() {
@@ -44,7 +44,7 @@ function Footer() {
                     className="text-zinc-400	text-sm font-normal	no-underline"
                     onClick={() => setModalActive(true)}
                 >
-                    Открыть модалку
+                    Связаться с нами
                 </button>
                 <Modal active={modalActive} setActive={setModalActive}>
                     <Formik
