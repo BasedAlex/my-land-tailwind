@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Modal from '../UI/Modals/Modal'
+import Modal from '../../UI/Modals/Modal'
 import icon from '../../assets/images/coolicon-close.svg'
 
 const data = [
