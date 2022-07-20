@@ -44,7 +44,7 @@ function Footer() {
                     className="text-zinc-400	text-sm font-normal	no-underline"
                     onClick={() => setModalActive(true)}
                 >
-                    Открыть модалку
+                    Связаться с нами
                 </button>
                 <Modal active={modalActive} setActive={setModalActive}>
                     <Formik
