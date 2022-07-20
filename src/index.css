@@ -11,6 +11,21 @@
     .btn-white {
         @apply rounded-md	font-medium	text-sm	border-none	transition-all text-bookmark-purple bg-bookmark-white px-5 py-3 hover:bg-bookmark-blue hover:text-bookmark-white active:bg-bookmark-blue active:text-bookmark-white focus:bg-bookmark-purple focus:text-bookmark-white;
     }
+    .modal {
+        @apply h-screen w-screen bg-black/50 fixed top-0 left-0 flex items-center justify-center opacity-0 pointer-events-none duration-500;
+    }
+    .modal.active {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    .modal__content {
+        @apply p-5 rounded-xl bg-white scale-50 transition-all w-1/2;
+    }
+
+    .modal__content.active {
+        @apply scale-100;
+    }
+
     .griden {
         @apply grid grid-cols-6 gap-x-8 gap-y-4 items-start h-full;
     }
