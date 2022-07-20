@@ -312,13 +312,13 @@ export default function Rent() {
                 </div>
                 <div>
                     <div className="ml-12 ">
-                        <div className="griden ">
+                        <div className="griden">
                             {data.map((modal) => {
                                 return (
                                     <>
                                         <div key={modal.key} className="col">
                                             <div className="bg-white shadow-md	 shadow-neutral-500	">
-                                                <div className="grid grid-cols-rentingrevtop auto-rowsers min-h-full ">
+                                                <div className="grid grid-cols-rentingrevtop auto-rowsers h-full">
                                                     {modal.cardTitle}
                                                     <input
                                                         key={modal.key}
@@ -350,11 +350,12 @@ export default function Rent() {
                                 </span>
                             </div>
                         }
+                        style={{ margin: 'auto auto' }}
                     >
                         <div className="pt-8 pr-8 pb-0 pl-9">
                             {activeBodyModal.map((modal) => {
                                 return (
-                                    <div key={modal.key}>
+                                    <div key={modal.key} className="grid">
                                         <header>
                                             <div className="flex justify-between items-center">
                                                 <div>

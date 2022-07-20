@@ -11,6 +11,22 @@
     .btn-white {
         @apply rounded-md	font-medium	text-sm	border-none	transition-all text-bookmark-purple bg-bookmark-white px-5 py-3 hover:bg-bookmark-blue hover:text-bookmark-white active:bg-bookmark-blue active:text-bookmark-white focus:bg-bookmark-purple focus:text-bookmark-white;
     }
+    .griden {
+        @apply grid grid-cols-6 gap-x-8 gap-y-4 items-start h-full;
+    }
+    .col {
+        @apply h-full;
+    }
+    .col:nth-child(1) {
+        @apply row-start-1 col-span-1/3;
+    }
+    .col:nth-child(2) {
+        @apply row-start-1 col-span-4/3;
+    }
+
+    .col:nth-last-child(-1n + 3) {
+        @apply row-start-2/3 col-span-2;
+    }
 }
 
 body {

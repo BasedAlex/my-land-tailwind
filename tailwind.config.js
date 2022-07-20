@@ -23,6 +23,13 @@ module.exports = {
 				'bookmark-hover-blue': '#648ff4',
 				'bookmark-focus-blue': '#1c47ae',
 			},
+			gridColumn: {
+        'span-1/3': '1 / span 3',
+				'span-4/3': '4 / span 3',
+      },
+			gridRowStart: {
+				'2/3': '2 / span 3'
+			},
 			backgroundImage: {
 				'header-pattern': "url('/src/assets/images/header_background.svg')",
 				modalViewButtonG:
