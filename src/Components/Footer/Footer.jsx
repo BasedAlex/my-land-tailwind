@@ -12,7 +12,7 @@ function Footer() {
     // }
     return (
         <footer>
-            <div className="grid grid-cols-6 gap-2.5 bg-neutral-700	p-16">
+            <div className="grid grid-cols-6 gap-2.5 bg-neutral-900	p-16">
                 <img src={logo} alt="" />
                 <a
                     href="%"
@@ -55,8 +55,9 @@ function Footer() {
                             city: '',
                             message: '',
                         }}
-                        onSubmit={(values) => {
+                        onSubmit={(values, { resetForm }) => {
                             console.log(values)
+                            resetForm({ values: '' })
                         }}
                     >
                         {({ values, handleSubmit, handleChange }) => (
@@ -69,7 +70,7 @@ function Footer() {
                                         type={'text'}
                                         name={'name'}
                                         onChange={handleChange}
-                                        defaultValue={values.name}
+                                        value={values.name}
                                     />
                                 </p>
 
@@ -81,7 +82,7 @@ function Footer() {
                                         type={'text'}
                                         name={'email'}
                                         onChange={handleChange}
-                                        defaultValue={values.email}
+                                        value={values.email}
                                     />
                                 </p>
 
@@ -95,7 +96,7 @@ function Footer() {
                                         type={'text'}
                                         name={'phone'}
                                         onChange={handleChange}
-                                        defaultValue={values.phone}
+                                        value={values.phone}
                                     />
                                 </p>
 
@@ -107,7 +108,7 @@ function Footer() {
                                         type={'text'}
                                         name={'city'}
                                         onChange={handleChange}
-                                        defaultValue={values.city}
+                                        value={values.city}
                                     />
                                 </p>
 
@@ -119,7 +120,7 @@ function Footer() {
                                         type={'text'}
                                         name={'message'}
                                         onChange={handleChange}
-                                        defaultValue={values.message}
+                                        value={values.message}
                                         placeholder={'Введите Ваше сообщение'}
                                     />
                                 </p>
