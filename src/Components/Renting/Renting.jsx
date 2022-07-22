@@ -11,7 +11,7 @@ const data = [
             </h2>
         ),
         subTitle: (
-            <p className="not-italic font-normal text-sm m-0 mb-6">
+            <p className="not-italic font-normal text-sm m-0 mb-6 h-50">
                 Автомобили в рассрочку до 18 месяцев
             </p>
         ),
@@ -21,7 +21,7 @@ const data = [
             </h2>
         ),
         termsCons: (
-            <ul className="not-italic font-normal text-sm	list-none	pl-0 mb-6 mt-0">
+            <ul className="not-italic font-normal text-sm list-none pl-0 mb-6 mt-0 ">
                 <li>&#8211; 0% за пользование рассрочкой;</li>
                 <li>&#8211; первоначальный взнос от 0%;</li>
                 <li>
@@ -43,7 +43,7 @@ const data = [
             </h4>
         ),
         cardText: (
-            <p className="font-sm pl-6 pr-5 my-3.5">
+            <p className="font-sm pl-6 pr-5 my-3.5 h-20">
                 Иностранные и отечественные марки. Срок кредита – от 6 до 84
                 месяцев. Досрочное погашение без комиссии. Программой
                 предусмотрено оформление договора страхования автомобиля от
@@ -96,7 +96,7 @@ const data = [
             </h4>
         ),
         cardText: (
-            <p className="font-sm pl-6 pr-5 my-3.5">
+            <p className="font-sm pl-6 pr-5 my-3.5 h-20">
                 Автомобили иностранных и отечественных марок. Максимальный
                 возраст автомобиля — 15 лет. Срок кредита – от 6 до 72 месяцев.
                 Досрочное погашение без комиссии. Специальные ставки на покупку
@@ -152,7 +152,7 @@ const data = [
             </h4>
         ),
         cardText: (
-            <p className="font-sm pl-6 pr-5 font-sans	my-3.5">
+            <p className="font-sm pl-6 pr-5 font-sans my-3.5 h-20">
                 Возмещение каждого 12-го платежа по кредиту
             </p>
         ),
@@ -184,12 +184,12 @@ const data = [
         termsExtraCons: '',
         extraAgreements: '',
         cardTitle: (
-            <h4 className="text-sky-900	text-base font-semibold	pl-6 pr-14	pt-4">
+            <h4 className="text-sky-900	text-base font-semibold	pl-6 pr-14	pt-4 ">
                 Авторассрочка на новые автомобили и на автомобили с пробегом
             </h4>
         ),
         cardText: (
-            <p className="font-sm pl-6 pr-5 font-sans	my-3.5">
+            <p className="font-sm pl-6 pr-5 font-sansmy-3.5 h-20">
                 Возмещение каждого 12-го платежа по кредиту
             </p>
         ),
@@ -257,7 +257,7 @@ const data = [
             </h4>
         ),
         cardText: (
-            <p className="font-sm pl-6 pr-5 font-sans	my-3.5">
+            <p className="font-sm pl-6 pr-5 font-sans	my-3.5 h-20">
                 Снижению процентной ставки по договору потребительского кредита
                 на покупку транспортного средства.
             </p>
@@ -305,7 +305,10 @@ function Rent() {
                             {data.map((modal) => {
                                 return (
                                     <>
-                                        <div key={modal.key} className="col">
+                                        <div
+                                            key={modal.key}
+                                            className="col h-full"
+                                        >
                                             <div className="bg-white shadow-md	 shadow-neutral-500	">
                                                 <div className="grid grid-cols-rentingrevtop auto-rowsers h-full">
                                                     {modal.cardTitle}
