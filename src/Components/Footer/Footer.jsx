@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Modal from '../../UI/Modals/Modal'
 import logo from '../../assets/images/logoFooter.svg'
-import FooterModal from './FooterModal/FooterModal'
+import FeedbackForm from './FeedbackForm/FeedbackForm'
 
 function Footer() {
     const [modalActive, setModalActive] = useState(false)
@@ -44,7 +44,7 @@ function Footer() {
                     Связаться с нами
                 </button>
                 <Modal active={modalActive} setActive={setModalActive}>
-                    <FooterModal />
+                    <FeedbackForm />
                 </Modal>
             </div>
         </footer>
